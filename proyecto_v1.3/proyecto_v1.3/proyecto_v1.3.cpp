@@ -57,10 +57,10 @@ void lista(int y, int j)
     color(11);
     cout << left << setw(30) << "Genero" << setfill(' ') << " \xB3 ";
     color(15);
-    cout << "Precio  \xB3 ";
+    cout << "Precio   \xB3 ";
     color(11);
     cout << "Impuesto (16\x25)  \xB3 ";
-    color(15);
+    color(14);
     cout << "Total    \xB3 \n\n\n";
 
 
@@ -81,15 +81,20 @@ void lista(int y, int j)
         color(3);
         cout << left << setw(30) << registro[i].gen << setfill(' ') << " \xB3 "; //Genero del juego
         color(8);
-        cout << left << "$" << setw(6) << registro[i].precio << setfill(' ') << " \xB3 ";  //Precio unitario
+        cout << left << "$" << fixed << setprecision(2) << setw(7) << registro[i].precio << setfill(' ') << " \xB3 ";  //Precio unitario
         color(3);
-        cout << left << "$" << setw(14) << registro[i].imp << setfill(' ') << " \xB3 ";  //Impuestos
-        color(8);
-        cout << left << "$" << setw(7) << registro[i].total << setfill(' ') << " \xB3 ";  //Total con impuestos
+        cout << left << "$" << fixed << setprecision(2) << setw(14) << registro[i].imp << setfill(' ') << " \xB3 ";  //Impuestos
+        color(6);
+        cout << left << "$" << fixed << setprecision(2) << setw(7) << registro[i].total << setfill(' ') << " \xB3 ";  //Total con impuestos
         cout << "\n\n";
     }
-    color(10);
-    cout << "Presione una tecla para continuar...";
+
+    if (menu == 4)
+    {
+        color(10);
+        cout << "Presione una tecla para continuar...";
+    }
+    
 }
 
 void leerBN()
